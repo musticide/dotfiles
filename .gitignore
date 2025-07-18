@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# But don't ignore these files
+!komorebi.json
+!komorebi.bar.json
+!.wezterm.lua
+
+# Don't ignore sample folder and its contents
+# !sample/
+# !sample/**
+
+# Don't ignore .gitignore itself
+!.gitignore
