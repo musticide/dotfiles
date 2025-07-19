@@ -3,10 +3,10 @@
     "monitor": 0,
     "font_family": "JetBrains Mono",
     "height": 32,
-    "max_label_width": 100.0,
+    "max_label_width": 120.0,
     "grouping": {
         "kind": "Alignment",
-        "rounding": 2.0,
+        "rounding": 10.0,
         "transparency_alpha": 155
     },
     "transparency": true,
@@ -38,13 +38,6 @@
             }
         },
         {
-            "Network": {
-                "enable": false,
-                "show_total_data_transmitted": true,
-                "show_network_activity": true
-            }
-        },
-        {
             "Date": {
                 "enable": true,
                 "format": "DayDateMonthYear"
@@ -53,7 +46,8 @@
         {
             "Time": {
                 "enable": true,
-                "format": "TwentyFourHour"
+                "format": "TwentyFourHourWithoutSeconds",
+                "changing_icon": true
             }
         }
     ],
@@ -98,9 +92,9 @@
         },
         {
             "Network": {
-                "enable": false,
-                "show_total_data_transmitted": true,
-                "show_network_activity": true
+                "enable": true,
+                "show_activity": false,
+                "show_total_activity": false
             }
         },
         {
