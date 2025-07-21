@@ -13,7 +13,7 @@
     "transparency_alpha": 10,
     "theme": {
         "palette": "Base16",
-        "name": "OneLight",
+        "name": "Nord",
         "accent": "Base0D"
     },
     "center_widgets": [

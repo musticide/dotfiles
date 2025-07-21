@@ -16,7 +16,7 @@
     },
     "theme": {
         "palette": "Base16",
-        "name": "OneLight",
+        "name": "Nord",
         "unfocused_border": "Base03",
         "bar_accent": "Base0D"
     },
