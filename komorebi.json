@@ -14,6 +14,7 @@
         "style": "EaseOutSine",
         "fps": 60
     },
+    "mouse_follows_focus": false,
     "theme": {
         "palette": "Base16",
         "name": "Nord",
