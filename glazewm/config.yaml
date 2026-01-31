@@ -189,11 +189,11 @@ window_rules:
     match:
       - window_process: { regex: 'opera' }
   # wezterm
-  - commands: ['move --workspace 2', 'set-transparency --opacity 95%']
+  - commands: ['move --workspace 2', 'set-transparency --opacity 92%']
     match:
       - window_process: { regex: 'wezterm|nvim|nu.exe' }
   # android studio
-  - commands: ['move --workspace 3']
+  - commands: ['move --workspace 3', 'set-transparency --opacity 95%']
     match:
       - window_process: { regex: 'studio64' }
   # unity
