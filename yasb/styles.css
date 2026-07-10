@@ -193,6 +193,10 @@
 
 .wifi-widget .icon {
     color: #ffffff !important;
+    padding-left: 0;
+    padding-right: 0;
+    min-width: 25px;
+    max-width: 35px;
 }
 
 /* CPU MEMORY Setting */
@@ -203,12 +207,16 @@
     padding-left: 0;
 }
 .cpu-widget .widget-container {
+    padding-left: 0;
+    padding-right: 0;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-right-radius: 0;
 }
 .memory-widget .widget-container {
+    padding-left: 0;
+    padding-right: 5;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
@@ -217,16 +225,16 @@
     max-width: 25px;
 }
 .cpu-widget .label {
-    min-width: 25px;
+    min-width: 10px;
     max-width: 25px;
 }
 .cpu-widget .icon {
     color: var(--mauve);
-    margin-right: 4px;
+    margin-right: 1px;
 }
 .memory-widget .icon {
     color: var(--mauve);
-    margin-right: 4px;
+    margin-right: 1px;
 }
 
 /* WORKSPACE Setting */
@@ -510,7 +518,7 @@
 } 
 .volume-widget .icon {
     color: var(--mauve);
-    margin-right: 4px;
+    margin-right: 2px;
     min-width: 20px;
 } 
 .volume-slider {

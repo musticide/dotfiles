@@ -1,6 +1,6 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
-
+-- => -> ===
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
@@ -24,6 +24,8 @@ config.window_padding = {
 	top = 6,
 	bottom = 0,
 }
+
+config.max_fps = 60
 
 -- config.background = {
 -- 	{
@@ -108,6 +110,13 @@ config.keys = {
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
 }
+
+-- Performance enhancements
+-- config.webgpu_power_preference = "HighPerformance"
+config.front_end = "OpenGL" --"WebGpu"
+-- config.harfbuzz_features = { "calt=0", "clig=0" }
+config.default_cursor_style = "SteadyBlock"
+config.scrollback_lines = 2000
 
 -- and finally, return the configuration to wezterm
 return config
