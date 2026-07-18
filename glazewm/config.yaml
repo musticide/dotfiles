@@ -197,7 +197,7 @@ window_rules:
 
   - commands: ['set-tiling']
     match:
-      - window_process: { regex: 'opera' }
+      - window_process: { regex: 'brave' }
       - window_process: { regex: 'wezterm|nvim|nu.exe' }
       - window_process: { regex: 'studio64' }
       - window_process: { regex: 'Unity' }
@@ -208,10 +208,10 @@ window_rules:
       - window_title: { regex: 'discord' }
       - window_process: { regex: 'obs64' }
 
-  #OperaGX
+  #Browser
   - commands: ['move --workspace 1']
     match:
-      - window_process: { regex: 'opera' }
+      - window_process: { regex: 'brave' }
   # wezterm
   - commands: ['move --workspace 8', 'set-transparency --opacity 92%']
     match:
