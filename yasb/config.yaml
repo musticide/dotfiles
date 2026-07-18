@@ -34,9 +34,9 @@ bars:
       right: 0
     widgets:
       left: 
-      - "home"
+      # - "home"
       - "glazewm_workspaces"
-      # - "taskbar"
+      - "taskbar"
       # - "active_window"
       center:
       - "active_window"
@@ -575,7 +575,7 @@ widgets:
       animation:
         enabled: true
       preview:
-        enabled: true
+        enabled: false
         width: 240
         delay: 400
         padding: 10

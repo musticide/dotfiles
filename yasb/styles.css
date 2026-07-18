@@ -612,7 +612,7 @@
     border: none;
 }
 .taskbar-widget .app-icon {
-    padding: 0 5px;
+    padding: 0 0px;
     border: none;
     margin: 0;    
 }
