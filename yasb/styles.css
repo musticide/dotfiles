@@ -45,14 +45,12 @@
 	padding: 0 4px;
 	margin: 0;
 }
- 
- 
- 
+
 .container-left,
 .container-center,
 .container-right {
 	margin: 0;
-	padding: 0;
+	padding: 0 0px;
 }
 .active-window-widget .icon {
     margin-right: 8px;
@@ -71,8 +69,6 @@
     padding: 0;
     color: transparent;
     border-radius: 0px;
-    height: 10px;
-    width: 25px;
 }
 .glazewm-workspaces .ws-btn:hover {
     background-color: var(--bright2);
@@ -82,7 +78,7 @@
     font-size: 16px;
     color: var(--dark1);
     background-color: none;
-    padding: 0;
+    padding: 0 5px 0 0;
 }
 .glazewm-workspaces .ws-btn.active_empty,
 .glazewm-workspaces .ws-btn.active,
@@ -91,7 +87,7 @@
     color: var(--bright1);
     background: transparent;
     margin: 0px 0px;
-    padding: 0;
+    padding: 0 5px 0 0;
     border-radius: 0px;
     font-weight: 800;
 }
@@ -160,7 +156,7 @@
 
 .volume-widget .icon
 {
-	margin: 1px 6px 0px 0;
+	margin: 1px 8px 0px 0;
 }
 .cpu-widget .icon,
 .memory-widget .icon,

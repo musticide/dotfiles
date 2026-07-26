@@ -202,7 +202,7 @@ widgets:
   wifi:
       type: "yasb.wifi.WifiWidget"
       options:
-        label: "<span>{wifi_icon}</span>"
+        label: "<span>{wifi_icon} </span>"
         label_alt: "{wifi_name} {wifi_strength}%"
         update_interval: 5000
         callbacks:
@@ -275,7 +275,7 @@ widgets:
   volume:
       type: "yasb.volume.VolumeWidget"
       options:
-        label: "<span>{icon}</span> {level}"
+        label: "<span>{icon} </span> {level}"
         label_alt: "{volume}"
         icons:
           - "\ueee8"  # Icon for muted
