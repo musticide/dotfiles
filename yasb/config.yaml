@@ -13,7 +13,7 @@ bars:
       position: "top"
     blur_effect:
       enabled: true
-      dark_mode: true
+      dark_mode: false
       round_corners: false
       border_color: None
     window_flags:
@@ -32,7 +32,6 @@ bars:
         [
           "glazewm_workspaces",
           "taskbar",
-          # "active_window",
         ] 
       center: 
         [
@@ -110,9 +109,17 @@ widgets:
   memory:
       type: "yasb.memory.MemoryWidget"
       options:
-        label: "<span>\uf4bc</span> {virtual_mem_free}"
+        label: " {virtual_mem_used}/{virtual_mem_total}"
         label_alt: "<span>\uf4bc</span> {virtual_mem_percent}%"
         update_interval: 10000
+        hide_decimal: true
+        progress_bar:
+          enabled: false
+          progress_type: 'circular' #circular linear_horizontal linear_vertical
+          position: 'left'
+          size: 16
+          thickness: 2
+          radius: 0
         callbacks:
           on_right: "exec cmd /c Taskmgr"
 
@@ -174,7 +181,7 @@ widgets:
   wifi:
       type: "yasb.wifi.WifiWidget"
       options:
-        label: "<span>{wifi_icon} </span>"
+        label: "<span>{wifi_icon}</span>"
         label_alt: "{wifi_name} {wifi_strength}%"
         update_interval: 5000
         callbacks:
@@ -247,7 +254,7 @@ widgets:
   volume:
       type: "yasb.volume.VolumeWidget"
       options:
-        label: "<span>{icon} </span>"
+        label: "<span>{icon}</span>"
         label_alt: "{volume}"
         icons:
           - "\ueee8"  # Icon for muted
@@ -374,7 +381,7 @@ widgets:
         on_middle: "toggle_label"
       container_padding:
         top: 0
-        left: 8
+        left: 0
         bottom: 0
         right: 8
       label_shadow:
