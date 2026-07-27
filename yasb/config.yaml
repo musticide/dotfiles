@@ -1,13 +1,6 @@
 watch_stylesheet: true
 watch_config: true
 
-# This komorebi setting will be used for tray context menu.
-# If you don't use komorebi, you can remove this section.
-# komorebi:
-#   start_command: "komorebic start --whkd"
-#   stop_command: "komorebic stop --whkd"
-#   reload_command: "komorebic reload-configuration"
-  
 # This is the main configuration file for Yet Another Status Bar (YASB)
 bars:
   status-bar:
@@ -20,7 +13,7 @@ bars:
       position: "top"
     blur_effect:
       enabled: true
-      dark_mode: false
+      dark_mode: true
       round_corners: false
       border_color: None
     window_flags:
@@ -39,7 +32,7 @@ bars:
         [
           "glazewm_workspaces",
           "taskbar",
-          "active_window",
+          # "active_window",
         ] 
       center: 
         [
@@ -57,38 +50,17 @@ bars:
           # "power_menu"
         ]
 widgets:
-  media:
-    type: "yasb.media.MediaWidget"
-    options:
-      label: "{title} - {artist}"
-      label_alt: "{title}"
-      max_field_size:
-        label: 20
-        label_alt: 30
-      show_thumbnail: false
-      controls_only: false
-      controls_left: true
-      hide_empty: true
-      thumbnail_alpha: 80
-      thumbnail_padding: 8
-      thumbnail_corner_radius: 16 # Set to 0 for square corners
-      icons:
-        prev_track: "\ue892"
-        next_track: "\ue893"
-        play: "\ue768"
-        pause: "\ue769"
-
   active_window:
       type: "yasb.active_window.ActiveWindowWidget"
       options:
         label: "{win[title]}"
         label_alt: "[class_name='{win[class_name]}' exe='{win[process][name]}' hwnd={win[hwnd]}]"
         label_no_window: ""
-        label_icon: true
+        label_icon: false
         label_icon_size: 16
         max_length: 56
         max_length_ellipsis: "..."
-        monitor_exclusive: true
+        monitor_exclusive: false
 
   battery:
       type: "yasb.battery.BatteryWidget"
@@ -155,7 +127,7 @@ widgets:
       empty_label: "○"
       
       active_populated_label: "●"
-      active_empty_label: "○"
+      active_empty_label: "◎"
 
       app_icons: 
         enabled_populated: false
@@ -275,7 +247,7 @@ widgets:
   volume:
       type: "yasb.volume.VolumeWidget"
       options:
-        label: "<span>{icon} </span> {level}"
+        label: "<span>{icon} </span>"
         label_alt: "{volume}"
         icons:
           - "\ueee8"  # Icon for muted
@@ -380,9 +352,9 @@ widgets:
         padding: 10
         margin: 15
       title_label:
-        enabled: false
-        show: "always"
-        min_length: 10
+        enabled: true 
+        show: "focused"
+        min_length: 0
         max_length: 30
       ignore_apps:
         processes: []
@@ -410,3 +382,61 @@ widgets:
         color: "black"
         radius: 3
         offset: [ 1, 1 ]
+
+  media:
+    type: "yasb.media.MediaWidget"
+    options:
+      label: "{title}{s}{artist}"
+      label_alt: "{title}"
+      separator: " - "
+      hide_empty: true
+      callbacks:
+        on_left: "toggle_play_pause"
+        on_middle: "open_media_source"
+        on_right: "toggle_media_menu"
+      max_field_size:
+        label: 20
+        label_alt: 30
+      show_thumbnail: true
+      controls_only: false
+      controls_left: true
+      controls_hide: false
+      thumbnail_alpha: 80
+      thumbnail_padding: 0
+      thumbnail_corner_radius: 0
+      thumbnail_edge_fade: true
+      icons:
+        prev_track: "\ue892"
+        next_track: "\ue893"
+        play: "\ue768"
+        pause: "\ue769"
+      media_menu:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "system"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        thumbnail_corner_radius: 8
+        thumbnail_size: 120
+        max_title_size: 60
+        max_artist_size: 20
+        show_source: true
+      media_menu_icons:
+        prev_track: " \uf048 "
+        next_track: " \uf051 "
+        play: " \uf04b "
+        pause: " \uf04c "
+      scrolling_label:
+        enabled: true
+        update_interval_ms: 33
+        style: "left"  # can be "left", "right", "bounce", "bounce-ease"
+        separator: " | "
+        label_padding: 0
+        always_scroll: true
+        # Easing curve params: https://www.desmos.com/calculator/j7eamemxzi
+        ease_slope: 20
+        ease_pos: 0.8
+        ease_min: 0.5
