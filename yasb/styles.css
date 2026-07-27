@@ -54,6 +54,7 @@
 }
 .active-window-widget .icon {
     margin-right: 8px;
+    margin-left: 8px;
 }
 
 .glazewm-workspaces .offline-status {
@@ -295,10 +296,20 @@
     color: var(--dark1);
     margin-top: -20px;
 }
-QToolTip {
-    background-color: #1a1b26; /* Change this to your desired background color */
-    color: #c0caf5;            /* The text color inside the tooltip */
-    border: 1px solid #DAF7A6; /* Optional: adds a border to match your calendar */
-    padding: 4px 8px;          /* Adds some breathing room inside the tooltip */
-    border-radius: 4px;        /* Slightly rounds the corners */
+.tooltip {
+    background-color: #18191a;
+    border: 1px solid #36383a;
+    border-radius: 4px;
+    color: #a6adc8;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    margin-top: 4px;
+}
+/* Dark style (optional) */
+.dark.tooltip {
+    background-color: #18191a;
+    border: 1px solid #36383a;
+    color: #a6adc8;
 }
