@@ -413,10 +413,10 @@ widgets:
       thumbnail_corner_radius: 0
       thumbnail_edge_fade: true
       icons:
-        prev_track: "\ue892"
-        next_track: "\ue893"
-        play: "\ue768"
-        pause: "\ue769"
+        prev_track: "\uf048"
+        next_track: "\uf051"
+        play: "\uf04b"
+        pause: "\uf04c"
       media_menu:
         blur: true
         round_corners: true

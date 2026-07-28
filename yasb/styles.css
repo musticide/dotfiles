@@ -204,24 +204,23 @@
 	background-color: rgba(0, 0, 0, 0.0);
 }
 .media-widget .btn {
-	color: #acb2c9;
+	color: (--bright2);
 	padding: 0 3px;
-	margin: 4px 0;
-	font-family: Segoe Fluent Icons;
+	margin: 4px 2px;
 }
 .media-widget .btn:hover {
-	color: #89b4fa;
+	color: var(--bright1);
 }
 .media-widget .btn.play {
-	background-color: rgba(188, 195, 207, 0.178);
+	background-color: transparent;
 	border-radius: 12px;
 	font-size: 14px;
 }
 .media-widget .btn.disabled:hover,
 .media-widget .btn.disabled {
-	color: #4e525c;
+	color: var(--dark1);
 	font-size: 12px;
-	background-color: var(--background);
+	background-color: transparent;
 }
 
 
