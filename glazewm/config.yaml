@@ -20,7 +20,7 @@ general:
 
   cursor_jump:
     # Whether to automatically move the cursor on the specified trigger.
-    enabled: true
+    enabled: false
 
     # Trigger for cursor jump:
     # - 'monitor_focus': Jump when focus changes between monitors.
@@ -60,7 +60,7 @@ window_effects:
     # ** Exclusive to Windows 11 due to API limitations.
     border:
       enabled: true
-      color: '#8dbcff'
+      color: '#ffac4e'
 
     # Remove the title bar from the window's frame. Note that this can
     # cause rendering issues for some applications.
@@ -147,10 +147,10 @@ workspaces:
     bind_to_monitor: 0
   - name: '5'
     keep_alive: false
-    bind_to_monitor: 1
+    bind_to_monitor: 0
   - name: '6'
     keep_alive: false
-    bind_to_monitor: 1
+    bind_to_monitor: 0
   - name: '7'
     keep_alive: false
     bind_to_monitor: 0
@@ -197,23 +197,23 @@ window_rules:
 
   - commands: ['set-tiling']
     match:
-      - window_process: { regex: 'brave' }
+      # - window_process: { regex: 'brave' }
       - window_process: { regex: 'wezterm|nvim|nu.exe' }
-      - window_process: { regex: 'studio64' }
-      - window_process: { regex: 'Unity' }
-      - window_process: { regex: 'blender' }
-      - window_process: { regex: 'krita' }
-      - window_process: { regex: 'GitHubDesktop' }
-      - window_process: { regex: 'WhatsApp' }
-      - window_title: { regex: 'discord' }
-      - window_process: { regex: 'obs64' }
+      # - window_process: { regex: 'studio64' }
+      # - window_process: { regex: 'Unity' }
+      # - window_process: { regex: 'blender' }
+      # - window_process: { regex: 'krita' }
+      # - window_process: { regex: 'GitHubDesktop' }
+      # - window_process: { regex: 'WhatsApp' }
+      # - window_title: { regex: 'discord' }
+      # - window_process: { regex: 'obs64' }
 
   #Browser
   - commands: ['move --workspace 1']
     match:
       - window_process: { regex: 'brave' }
   # wezterm
-  - commands: ['move --workspace 8', 'set-transparency --opacity 92%']
+  - commands: ['move --workspace 8']
     match:
       - window_process: { regex: 'wezterm|nvim|nu.exe' }
   # android studio
@@ -243,7 +243,7 @@ window_rules:
   # Whatsapp
   - commands: ['move --workspace 2']
     match:
-      - window_title: { regex: 'WhatsApp' }
+      - window_process: { regex: 'WhatsApp' }
   # Discord
   - commands: ['move --workspace 2']
     match:
@@ -253,7 +253,7 @@ window_rules:
     match:
       - window_process: { regex: 'obs64' }
 
-  - commands: ['set-floating', 'set-transparency --opacity 90%']
+  - commands: ['set-floating', 'set-transparency --opacity 50%']
     match:
       - window_process: { equals: "Flow.Launcher" }
         # window_title: { equals: "Settings" }
@@ -370,8 +370,8 @@ keybindings:
   #   bindings: ['alt+a']
 
   # Focus the workspace that last had focus.
-  # - commands: ['focus --recent-workspace']
-  #   bindings: ['alt+d']
+  - commands: ['focus --recent-workspace']
+    bindings: ['alt+0']
 
   # Change focus to a workspace defined in `workspaces` config.
   - commands: ['focus --workspace 1']
