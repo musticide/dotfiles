@@ -1,5 +1,6 @@
 watch_stylesheet: true
 watch_config: true
+#/O218fgpDqv8dzK8H
 
 # This is the main configuration file for Yet Another Status Bar (YASB)
 bars:
@@ -12,8 +13,8 @@ bars:
     alignment:
       position: "top"
     blur_effect:
-      enabled: true
-      dark_mode: false
+      enabled: false
+      dark_mode: true
       round_corners: false
       border_color: None
     window_flags:
@@ -27,6 +28,17 @@ bars:
       left: 0
       bottom: 0
       right: 0
+    layouts:
+      left:
+        alignment: "left"
+        stretch: true
+      center:
+        alignment: "center"
+        stretch: true
+      right:
+        alignment: "right"
+        stretch: true
+
     widgets:
       left:
         [
@@ -36,7 +48,8 @@ bars:
       center: 
         [
           "clock",
-          "weather",
+          # "weather",
+          "obs"
         ]
       right:
         [
@@ -109,8 +122,9 @@ widgets:
   memory:
       type: "yasb.memory.MemoryWidget"
       options:
-        label: " {virtual_mem_used}/{virtual_mem_total}"
-        label_alt: "<span>\uf4bc</span> {virtual_mem_percent}%"
+        
+        label: "<span>\ueb50</span> {virtual_mem_percent}%"
+        label_alt: "<span>\ueb50</span> {virtual_mem_used}/{virtual_mem_total}"
         update_interval: 10000
         hide_decimal: true
         progress_bar:
@@ -134,7 +148,7 @@ widgets:
       empty_label: "○"
       
       active_populated_label: "●"
-      active_empty_label: "◎"
+      active_empty_label: "◉"
 
       app_icons: 
         enabled_populated: false
@@ -177,17 +191,50 @@ widgets:
         on_right: "disable_binding_mode"
 
     # By default binding mode names are fetched from GlazeWM and "display_name" option takes priority over "name".
-
+  #
   wifi:
-      type: "yasb.wifi.WifiWidget"
-      options:
-        label: "<span>{wifi_icon}</span>"
-        label_alt: "{wifi_name} {wifi_strength}%"
-        update_interval: 5000
-        callbacks:
-          on_left: "exec cmd.exe /c start ms-settings:network"
-          on_middle: "do_nothing"
-          on_right: "toggle_label"
+    type: "yasb.wifi.WifiWidget"
+    options:
+      label: "<span>{wifi_icon}</span>"
+      label_alt: "{wifi_name} {wifi_strength}%"
+      update_interval: 5000
+      callbacks:
+        on_left: "toggle_menu"
+        on_middle: "exec cmd.exe /c start ms-settings:network"
+        on_right: "toggle_label"
+      ethernet_label: "<span>{wifi_icon}</span>"
+      ethernet_label_alt: "<span>{wifi_icon}</span>{ip_addr}"
+      ethernet_icon: "\ueba9"
+      get_exact_wifi_strength: false  # Optional. Will require location access permission if true.
+      wifi_icons: [
+        "\udb82\udd2e",  # Icon for 0% strength
+        "\udb82\udd1f",  # Icon for 1-24% strength
+        "\udb82\udd22",  # Icon for 25-49% strength
+        "\udb82\udd25",  # Icon for 50-74% strength
+        "\udb82\udd28"   # Icon for 75-100% strength
+      ]
+      menu_config:
+        blur: true
+        round_corners: true
+        round_corners_type: "normal"
+        border_color: "System"
+        alignment: "right"
+        direction: "down"
+        offset_top: 6
+        offset_left: 0
+        wifi_icons_secured: [
+          "\ue670",
+          "\ue671",
+          "\ue672",
+          "\ue673",
+        ]
+        wifi_icons_unsecured: [
+          "\uec3c",
+          "\uec3d",
+          "\uec3e",
+          "\uec3f",
+        ]
+
 
   traffic:
       type: "yasb.traffic.TrafficWidget"
@@ -398,13 +445,13 @@ widgets:
       separator: " - "
       hide_empty: true
       callbacks:
-        on_left: "toggle_play_pause"
+        on_left: "toggle_media_menu"
         on_middle: "open_media_source"
-        on_right: "toggle_media_menu"
+        on_right: "toggle_play_pause"
       max_field_size:
         label: 20
         label_alt: 30
-      show_thumbnail: true
+      show_thumbnail: false
       controls_only: false
       controls_left: true
       controls_hide: false
@@ -442,8 +489,36 @@ widgets:
         style: "left"  # can be "left", "right", "bounce", "bounce-ease"
         separator: " | "
         label_padding: 0
-        always_scroll: true
+        always_scroll: false
         # Easing curve params: https://www.desmos.com/calculator/j7eamemxzi
         ease_slope: 20
         ease_pos: 0.8
         ease_min: 0.5
+
+  obs:
+    type: "yasb.obs.ObsWidget"
+    options:
+      connection:
+        host: "localhost"
+        port: 4455
+        password: "O218fgpDqv8dzK8H"
+      icons:
+        recording: "\ueba7"
+        stopped: "\ueba7"
+        paused: "\ueba7"
+        virtual_cam_on: "\udb81\udda0"
+        virtual_cam_off: "\udb81\udda0"
+        studio_mode_on: "\udb84\uddd8"
+        studio_mode_off: "\udb84\uddd8"
+        streaming: "\udb82\udd02"
+        streaming_stopped: "\udb82\udd02"
+      hide_when_not_recording: false
+      blinking_icon: true
+      show_record_time: true
+      show_virtual_cam: false
+      show_studio_mode: false
+      show_stream: true
+      show_stream_time: true
+      show_scene_name: true
+      show_stream_stats: true
+      tooltip: true

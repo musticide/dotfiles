@@ -37,21 +37,17 @@
 	padding: 0 1 0 0;
 }
 .yasb-bar {
-	padding: 0 8px;
+	padding: 0 0px;
 	margin: 0;
-    background-color: var(--background);
+    /* background-color: var(--background); */
+    background-color: transparent;
 }
 .widget {
-	padding: 0 4px;
-	margin: 0;
+    background-color: var(--background);
+	padding: 0 0px;
+	margin: 0px 0;
 }
 
-.container-left,
-.container-center,
-.container-right {
-	margin: 0;
-	padding: 0 0px;
-}
 .active-window-widget .icon {
     margin-right: 8px;
     margin-left: 8px;
@@ -91,6 +87,10 @@
     padding: 0 5px 0 0;
     border-radius: 0px;
     font-weight: 800;
+}
+.glazewm-workspaces {
+    padding-left: 8px;
+    background-color: var(--background);
 }
 
 /*POWER MENU WIDGET*/
@@ -157,7 +157,8 @@
 
 .volume-widget .icon
 {
-	margin: 1px 8px 0px 0;
+	margin-top: 1px;
+    margin-right: 4px;
 }
 .cpu-widget .icon,
 .memory-widget .icon,
@@ -165,7 +166,7 @@
 .wifi-widget .icon,
 .notification-widget .icon
 {
-	margin: 0 6px 1px 0;
+	margin: 0 4px 1px 0;
 }
 .notification-widget .icon{
 	font-size: 12px;
@@ -174,14 +175,19 @@
 .cpu-widget .icon,
 .memory-widget .icon {
 	font-size: 14px;
-	color: var(--dark1);
+	color: var(--bright1);
 }
 .memory-widget .icon {
-	color: var(--dark1);
+	color: var(--bright1);
 }
 .wifi-widget .icon {
     font-size: 14px;
-	color: var(--dark1);
+	color: var(--bright1);
+}
+
+.weather-widget{
+    padding: 0 4px;
+
 }
 .weather-widget .icon.sunnyDay {
 	color: rgb(221, 210, 107);
@@ -192,13 +198,27 @@
 	margin: 1px 2px 0px 0;
 }
 
+.cpu-widget,
+.memory-widget,
+.wifi-widget,
+.volume-widget,
+.notification-widget
+{
+    padding: 0 4px;
+}
+.cpu-widget
+{
+    padding-left: 8px;
+    border-bottom-left-radius: 12px;
+    /* border-top-left-radius: 12px; */
+
+}
+
 /* MEDIA WIDGET */
 .media-widget {
-	padding: 0;
-	padding-left: 2px;
-	margin: 0;
+	padding: 0 8px;
+	margin: 2px 8px 2px 0;
 	border-radius: 16px;
-	margin-right: 8px;
 }
 .media-widget .label {
 	background-color: rgba(0, 0, 0, 0.0);
@@ -226,8 +246,10 @@
 
 /* TASKBAR Settings */
 .taskbar-widget {
-    padding: 0;
-    margin: 0;
+    padding-right: 4px;
+	background-color: var(--background);
+	border-bottom-right-radius: 12px;
+	/* border-top-right-radius: 12px; */
     border: none;
 }
 .taskbar-widget .app-icon {
@@ -240,12 +262,18 @@
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 6px;
 }
+.taskbar-widget .app-container.flashing {
+    border-radius: 6px;
+    /* border: 1px solid rgba(255, 106, 106, 0.8); */
+    background-color: rgba(255, 106, 106, 0.62);
+}
+
 .taskbar-widget {
     padding-left: 0;
 }
 .taskbar-widget .widget-container {
     border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
+    /* border-top-left-radius: 0; */
 }
 
 .taskbar-widget .app-container {
@@ -254,10 +282,18 @@
     margin: 0;
 }
 
-.clock-widget .widget-container {
-    border-bottom-left-radius: 0;
-    border-top-left-radius: 0;
+.clock-widget{
+    border-bottom-left-radius: 12px;
+    /* border-top-left-radius: 12px; */
+    padding: 0 4 0 8;
 }
+
+/* .clock-widget .widget-container { */
+/*     margin: 0; */
+/*     padding: 0 4 0 15; */
+/*     border-bottom-left-radius: 12px; */
+/*     border-top-left-radius: 0; */
+/* } */
 .calendar .calendar-table,
 .calendar .calendar-table::item {
     background-color: transparent;
@@ -312,3 +348,230 @@
     border: 1px solid #36383a;
     color: #a6adc8;
 }
+
+.wifi-menu {
+    font-family: 'Segoe UI';
+    background-color: rgba(17, 17, 27, 0.4);
+    max-height: 350px;
+    min-height: 375px;
+    min-width: 375px;
+}
+
+.wifi-menu .progress-bar {
+    max-height: 2px;
+    color: #4cc2ff;
+}
+
+.wifi-menu .header {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: rgba(17, 17, 27, 0.6);
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu .error-message {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    padding: 12px;
+    background-color: red;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu .wifi-list {
+    background-color: rgba(17, 17, 27, 0.8);
+    margin-right: 3px;
+}
+
+.wifi-menu .wifi-item {
+    min-height: 35px;
+    padding: 2px 12px;
+    margin: 2px 4px;
+}
+
+.wifi-menu .wifi-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+}
+
+.wifi-menu .wifi-item[active=true] {
+    background-color: rgba(255, 255, 255, 0.15);
+    font-size: 14px;
+    border-radius: 6px;
+    min-height: 80px;
+}
+
+.wifi-menu .wifi-item .icon {
+    font-family: 'Segoe Fluent Icons';
+    font-size: 26px;
+    margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .name {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+.wifi-menu .wifi-item .password {
+    font-family: 'Segoe UI';
+    background-color: transparent;
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .status {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .strength {
+    font-family: 'Segoe UI';
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .controls-container {
+    padding-top: 8px;
+}
+
+.wifi-menu .wifi-item .connect {
+    background-color: rgba(255, 255, 255, 0.15);
+    padding: 4px 30px;
+    border-radius: 4px;
+    border: none;
+    font-size: 14px;
+}
+
+.wifi-menu .wifi-item .connect:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.wifi-menu .wifi-item .connect:pressed {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.wifi-menu .footer {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 12px;
+    margin-top: 2px;
+    color: #9399b2;
+    background-color: rgba(17, 17, 27, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.wifi-menu .footer .settings-button {
+    font-family: 'Segoe UI';
+    background-color: transparent;
+    border: none;
+    padding: 0 2px;
+    min-width: 26px;
+    min-height: 26px;
+    color: #fff;
+}
+
+.wifi-menu .footer .refresh-icon {
+    font-family: 'Segoe Fluent Icons';
+    background-color: transparent;
+    border: none;
+    min-width: 26px;
+    min-height: 26px;
+    color: #fff;
+}
+
+.wifi-menu .footer .refresh-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.obs-widget {
+    padding: 0 8 0 4;
+    background-color: var(--background);
+    border-bottom-right-radius: 12px;
+    /* border-top-right-radius: 12px; */
+    /* padding: 0 5px; */
+}
+.obs-widget .widget-container {
+    /* Container for all buttons */
+}
+/* Icon styles (all icons) */
+.obs-widget .icon {
+    min-width: 20px;
+    max-width: 20px;
+    font-size: 14px;
+    min-height: 24px;
+}
+/* Record button states (icon class) */
+.obs-widget .icon.record.recording {
+    color: #ff3b3b;
+}
+.obs-widget .icon.record.paused {
+    color: #bfc93b;
+}
+.obs-widget .icon.record.stopped {
+    color: #90939c;
+}
+
+/* Record time label (label class) */
+.obs-widget .label.record-time {
+    font-size: 12px;
+    font-family: "Segoe UI";
+    color: #ffffff;
+}
+
+/* Virtual camera button (icon class) */
+.obs-widget .icon.virtual-cam.on {
+    color: #c4ff3b;
+}
+.obs-widget .icon.virtual-cam.off {
+    color: #90939c;
+}
+
+/* Studio mode button (icon class) */
+.obs-widget .icon.studio-mode.on {
+    color: #3ba0ff;
+}
+.obs-widget .icon.studio-mode.off {
+    color: #90939c;
+}
+
+/* Stream button (icon class) */
+.obs-widget .icon.stream.on {
+    color: #ff3b3b;
+}
+.obs-widget .icon.stream.off {
+    color: #90939c;
+}
+.obs-widget .icon.stream.starting {
+    color: #ffaa3b;
+}
+.obs-widget .icon.stream.stopping {
+    color: #ffaa3b;
+}
+
+/* Stream time label (label class) */
+.obs-widget .label.stream-time {
+    font-size: 12px;
+    font-family: "Segoe UI";
+    color: #ffffff;
+}
+
+/* Scene name label (label class) */
+.obs-widget .label.scene-name {
+    font-size: 12px;
+    font-family: "Segoe UI";
+    color: #c4ff3b;
+}
+
+/* Stream stats label (label class) */
+.obs-widget .label.stream-stats {
+    font-size: 12px;
+    font-family: "Segoe UI";
+    color: #aaaaaa;
+}
+
