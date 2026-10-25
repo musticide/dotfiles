@@ -14,19 +14,20 @@ config.color_scheme = "Kanagawa"
 
 config.hide_tab_bar_if_only_one_tab = true
 
-config.font = wezterm.font("JetBrains Mono", { weight = "Medium" })
+config.font = wezterm.font("JetBrainsMono NFP", { weight = "Medium" })
 config.font_size = 10.0
 
 config.window_decorations = "RESIZE"
 config.window_padding = {
 	left = 0,
 	right = 0,
-	top = 6,
+	top = 4,
 	bottom = 0,
 }
 
 config.max_fps = 60
 
+config.background = { { source = { Color = "#ffffff" } } }
 -- config.background = {
 -- 	{
 -- 		source = {
@@ -60,6 +61,7 @@ config.max_fps = 60
 -- 		vertical_align = "Middle",
 -- 	},
 -- }
+config.window_background_opacity = 0.75
 
 config.keys = {
 	-- Toggle zoom (full screen) for current pane
